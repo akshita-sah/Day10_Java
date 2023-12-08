@@ -60,6 +60,18 @@ public class BST {
         return 1 + size(temp.left) + size(temp.right);
     }
 
+    MyBinaryNode search(int value,MyBinaryNode temp)
+    {
+        if(temp == null || temp.val == value)
+            return temp;
+        if (temp.val < value)
+        {
+            return search(value,temp.right);
+        }
+        return search(value,temp.right);
+    }
+
+    /* Inorder traversal of BST always gives the nodes in sorted order */
     void displayInorder(MyBinaryNode temp)
     {
         if(temp==null)
