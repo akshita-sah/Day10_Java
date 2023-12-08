@@ -11,6 +11,10 @@ class MyMapNode{
 }
 public class LinkedHashMap {
     MyMapNode head;
+
+    /* To create a hash map using a linked list, we use string as the key and frquency as its value.
+    We check if head = null we assign the new node else we traverse the list and add value after that.
+     */
     void addNode(String word)
     {
         if(head == null)
@@ -50,6 +54,28 @@ public class LinkedHashMap {
         return -1;
     }
 
+    void removeWord(String word)
+    {
+        MyMapNode temp = head;
+        MyMapNode prev = null;
+        while(temp!=null)
+        {
+            if(temp.key.equals(word)){
+                if(prev == null)
+                {
+                    head = temp.next;
+                }
+                else {
+                    prev.next = temp.next;
+                }
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+
+    }
+
     void display()
     {
         System.out.println("The elements of the hash map are: ");
@@ -60,6 +86,7 @@ public class LinkedHashMap {
             temp = temp.next;
         }
     }
+
     public static void main(String[] args)
     {
         LinkedHashMap wordMap = new LinkedHashMap();
