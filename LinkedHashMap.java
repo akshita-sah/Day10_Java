@@ -37,7 +37,19 @@ public class LinkedHashMap {
         MyMapNode newNode = new MyMapNode(word);
         temp.next = newNode;
     }
-    
+
+    int findFrequency(String word)
+    {
+        MyMapNode temp = head;
+        while(temp!=null)
+        {
+            if(temp.key.equals(word))
+                return temp.value;
+            temp = temp.next;
+        }
+        return -1;
+    }
+
     void display()
     {
         System.out.println("The elements of the hash map are: ");
