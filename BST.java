@@ -53,7 +53,13 @@ public class BST {
         }
     }
 
-    /* Inorder traversal of BST always gives the nodes in sorted order */
+    int size(MyBinaryNode temp)
+    {
+        if(temp==null)
+            return 0;
+        return 1 + size(temp.left) + size(temp.right);
+    }
+
     void displayInorder(MyBinaryNode temp)
     {
         if(temp==null)
